@@ -7,7 +7,8 @@
 
 const sistema_s = [];
  let i = 1;
- while(i <= 10){
+ while(i <= 10)
+ {
     sistema_s.unshift(prompt(`Ingrese el dato - ${i}`));
     i++
  }
