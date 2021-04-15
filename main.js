@@ -1,34 +1,49 @@
 
-
 //Crear una lista (Array) y pedir los datos del usuario x maximo 10
 //datos, usando el metodo unshift, eliminar los datos que deseas con
 //el metodo shift  mostrar el resultado en consola o en alert
+//Cuanto datos elimino en otro array y mostrarlos
+ 
+let usuario = prompt("¿Que tipo de usuario eres?"), cont = 0, lista = [], eliminar = [];
+parra:
+do{
+   lista.unshift(prompt(`Ingrese un dato cualquiera ${(cont+1)}`));
+   repetir:
+   while(true){
+      switch (prompt(`¿Deseas ingresesar otro datos?\n1.Si\n2.No`)) {
+         case '1':
+            cont++;
+            break repetir;
+         case '2':
+            break parra;
+         default:
+            alert("La opcion ingresada no existe");
+            continue repetir;
+      }
+   }
+}while(cont<=9);
+console.log(lista);
+cont = parseInt(prompt(`¿Cuantos datos deseas eliminar?\n 1 - ${lista.length}`));
+while(cont!=0){
+   eliminar.push(lista.shift());
+   cont--;
+}
+console.log(`Datos ingresados por el usuario ${usuario}: ${lista}`);
+console.log(`Datos eliminados por el usuario ${usuario}: ${eliminar}`);
 
 
-const sistema_s = [];
- let i = 1;
- while(i <= 10)
- {
-    sistema_s.unshift(prompt(`Ingrese el dato - ${i}`));
-    i++
- }
- console.log(sistema_s);
- console.log(sistema_s.shift());
 
 
+// const sistema_s = [];
+//  let i = 1;
+//  while(i <= 10)
+//  {
+//     sistema_s.unshift(prompt(`Ingrese el dato - ${i}`));
+//     i++
+//  }
+//  console.log(sistema_s);
+//  console.log(sistema_s.shift());
 
-// const sistema_s = ['sol', 'mercurio', 'venus', 'tierra', 'marte', 'jupiter', 'saturno', 'urano', 'neptuno', 'pluton'];
-
-// console.log(sistema_s.pop());
-// // expected output: "sol"
-
-// console.log(sistema_s);
-// // expected output: Array ["mercurio", "venus", "tierra", "marte", "jupiter", "saturno", "urano", "neptuno", "pluton"]
-
-// sistema_s.pop();
-
-// console.log(sistema_s);
-// // expected output: Array ["mercurio", "venus", "tierra", "marte", "jupiter", "saturno", "urano", "neptuno"]
 
 
 
@@ -44,8 +59,6 @@ const sistema_s = [];
 //  }
 //  console.log(lista);
 //  console.log(lista.pop());
-
-
 
 
 
@@ -163,7 +176,4 @@ const sistema_s = [];
 //         }
 //     ];
 // console.log(informacion_del_usuario);
-
-
-
 
